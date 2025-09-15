@@ -1,0 +1,42 @@
+// Must declare variable by specific type
+int x;
+x = 5;
+Console.WriteLine(x);
+
+
+
+// HOW TO PRINT
+// Console.WriteLine("") = Prints content in quotes AND a new line afterward
+// Console.Write("") = Prints content in quotes with NO new line afterward
+
+// Python version  
+print("Hello World!");
+// C# Version
+Console.WriteLine("Hello World!");
+
+// HOW TO GET USER INPUT
+// Console.ReadLine() = How to receive String 
+// Console.Read() = How to receive int or float
+
+// Python Version
+color = input("What in your fav color?");
+
+// C# Version
+Console.Write("What is your fav color?");
+string color = Console.ReadLine();
+
+// IF STATEMENTS
+// Python Version
+if x > y:
+    print('Greater');
+
+// C# Version
+if (x > y)
+{
+    Console.WriteLine("Greater");
+}
+
+// STRING INTERPOLATION
+// C# uses $ like Python uses f for format strings (adding variables into string using curly braces)
+
+
