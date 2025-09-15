@@ -10,7 +10,7 @@ Console.WriteLine(x);
 // Console.Write("") = Prints content in quotes with NO new line afterward
 
 // Python version  
-print("Hello World!");
+//print("Hello World!");
 // C# Version
 Console.WriteLine("Hello World!");
 
@@ -19,7 +19,7 @@ Console.WriteLine("Hello World!");
 // Console.Read() = How to receive int or float
 
 // Python Version
-color = input("What in your fav color?");
+// color = input("What in your fav color?");
 
 // C# Version
 Console.Write("What is your fav color?");
