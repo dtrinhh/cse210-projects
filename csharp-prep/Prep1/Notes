@@ -27,8 +27,8 @@ string color = Console.ReadLine();
 
 // IF STATEMENTS
 // Python Version
-if x > y:
-    print('Greater');
+// if x > y:
+    //print('Greater');
 
 // C# Version
 if (x > y)
