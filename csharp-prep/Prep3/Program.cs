@@ -12,25 +12,21 @@ class Program
 {
     static void Main(string[] args)
     {
+        Random randomGenerator = new Random();
+        int randomNum = randomGenerator.Next(1, 11);
         int guess = 0;
-        int magicNum = 1;
 
-        Console.WriteLine("What is the magic number?");
-        string setNum = Console.ReadLine();
-        magicNum = int.Parse(setNum);
-
-        while (guess != magicNum)
+        while (guess != randomNum)
         {
-
             Console.WriteLine("What is your guess?");
             string filler = Console.ReadLine();
             guess = int.Parse(filler);
 
-            if (guess == magicNum)
+            if (guess == randomNum)
             {
                 Console.WriteLine("That is correct!");
             }
-            else if (guess > magicNum)
+            else if (guess > randomNum)
             {
                 Console.WriteLine("Lower");
             }
