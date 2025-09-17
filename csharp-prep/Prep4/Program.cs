@@ -32,6 +32,7 @@ class Program
 
             int sum = 0;
             int average = 0;
+            int largestNum = 0;
 
             // Showing list after user is done giving numbers
             if (userNum == 0)
@@ -57,6 +58,9 @@ class Program
                 average = sum / numbers.Count;
                 Console.WriteLine($"The average is {average}");
 
+                // Logic for LARGEST NUMBER
+                largestNum = numbers.Max();
+                Console.WriteLine($"This the largest number is {largestNum}");
             }
 
             // Adding users numbers to list
