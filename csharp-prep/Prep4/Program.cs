@@ -31,7 +31,7 @@ class Program
             int userNum = int.Parse(Console.ReadLine());
 
             int sum = 0;
-            int average = 0;
+            float average = 0;
             int largestNum = 0;
 
             // Showing list after user is done giving numbers
@@ -55,7 +55,7 @@ class Program
                 Console.WriteLine($"The sum is {sum}");
 
                 // Logic for AVERAGE
-                average = sum / numbers.Count;
+                average = ((float)sum) / numbers.Count;
                 Console.WriteLine($"The average is {average}");
 
                 // Logic for LARGEST NUMBER
