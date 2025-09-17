@@ -15,6 +15,7 @@ class Program
         Random randomGenerator = new Random();
         int randomNum = randomGenerator.Next(1, 11);
         int guess = 0;
+        int attempts = 0;
 
         while (guess != randomNum)
         {
@@ -22,17 +23,19 @@ class Program
             string filler = Console.ReadLine();
             guess = int.Parse(filler);
 
+            attempts++;
+
             if (guess == randomNum)
             {
-                Console.WriteLine("That is correct!");
+                Console.WriteLine($"That is correct, it took you {attempts} guesses!");
             }
             else if (guess > randomNum)
             {
-                Console.WriteLine("Lower");
+                Console.WriteLine($"Lower, you are on guess number {attempts}");
             }
             else
             {
-                Console.WriteLine("Higher");
+                Console.WriteLine($"Higher, you are on guess number {attempts}");
             }
         }
     }
