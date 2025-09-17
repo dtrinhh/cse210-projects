@@ -28,6 +28,24 @@ class Program
             if (guess == randomNum)
             {
                 Console.WriteLine($"That is correct, it took you {attempts} guesses!");
+
+                Console.WriteLine("Would you like to play again?");
+                string invite = Console.ReadLine();
+
+                if (invite == "yes")
+                {
+                    randomNum = randomGenerator.Next(1, 11);
+                    guess = 0;
+                }
+                else if (invite == "Yes")
+                {
+                    randomNum = randomGenerator.Next(1, 11);
+                    guess = 0;
+                }
+                else
+                {
+                    Console.WriteLine("Thanks for playing, come back soon!");
+                }
             }
             else if (guess > randomNum)
             {
