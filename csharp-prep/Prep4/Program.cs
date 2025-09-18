@@ -33,19 +33,12 @@ class Program
             int sum = 0;
             float average = 0;
             int largestNum = 0;
+            int smallestPositive = 0;
 
             // Showing list after user is done giving numbers
             if (userNum == 0)
             {
                 discontinue = 0;
-
-                // Display list of numbers
-                // Console.WriteLine($"Here are the numbers you provided:");
-
-                // for (int i = 0; i < numbers.Count; i++)
-                // {
-                //     Console.WriteLine($"{numbers[i]}");
-                // }
 
                 // Logic for SUM/TOTAL
                 for (int x = 0; x < numbers.Count; x++)
@@ -61,6 +54,10 @@ class Program
                 // Logic for LARGEST NUMBER
                 largestNum = numbers.Max();
                 Console.WriteLine($"This the largest number is {largestNum}");
+
+                // Logic for SMALLEST POSITIVE NUMBER
+                smallestPositive = numbers.Where(num => num > 0).Cast<int>().DefaultIfEmpty().Min();
+                Console.WriteLine($"Smallest Positive number is {smallestPositive}");
 
                 // Logic for SORTING LIST from lowest to highest
                 numbers.Sort();
