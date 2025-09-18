@@ -33,7 +33,6 @@ class Program
             int sum = 0;
             float average = 0;
             int largestNum = 0;
-            int sortedList = 0;
 
             // Showing list after user is done giving numbers
             if (userNum == 0)
