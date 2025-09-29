@@ -21,8 +21,10 @@ class Program
         // Initialized a new resume with name and jobs input from the Job class. Displays Name and jobs.
         Resume resume1 = new Resume();
         resume1._name = "Dustin Trinh";
+
         resume1._jobs.Add(job1);
         resume1._jobs.Add(job2);
-        resume1.displayResume();
+
+        resume1.DisplayResume();
     }
 }
