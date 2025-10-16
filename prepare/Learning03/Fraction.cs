@@ -43,5 +43,23 @@ class Fraction
         // Console.WriteLine($"Your total is {fractionTotal} (numerator = {_top} & Denominator = {_bottom})");
     }
 
+    public int GetTop()
+    {
+        return _top;
+    }
+    public void SetTop(int top)
+    {
+        _top = top;
+    }
+
+    public int GetBottom()
+    {
+        return _bottom;
+    }
+    public void SetBottom(int bottom)
+    {
+        _bottom = bottom;
+    }
+
 
 }
