@@ -31,16 +31,8 @@ class Fraction
         _top = top;
         _bottom = bottom;
 
-        // Casting one of the int variables to be a double type because it is a requirement. Otherwise just returns the integer portion and no decimals.
-        double fractionTotal = _top / (double)_bottom;
-
-        // Displays Total with 2 decimal places (rounded) You can select ho wmany it'll round to by changing the number in .ToString("F#")
-        string cleanTotal = fractionTotal.ToString("F2");
-        Console.WriteLine($"Your total is {cleanTotal} (numerator = {_top} & Denominator = {_bottom})");
-
-
-        // Displays Total with ALL decimals
-        // Console.WriteLine($"Your total is {fractionTotal} (numerator = {_top} & Denominator = {_bottom})");
+        double fractionTotal = _top / _bottom;
+        Console.WriteLine($"Your total is {fractionTotal} (numerator = {_top} & Denominator = {_bottom})");
     }
 
     public int GetTop()
@@ -61,5 +53,29 @@ class Fraction
         _bottom = bottom;
     }
 
+    public void GetFractionString(int top, int bottom)
+    {
+        _top = top;
+        _bottom = bottom;
+
+        Console.WriteLine($"{_top} / {_bottom}");
+    }
+
+    public void GetDecimalValue(int top, int bottom)
+    { 
+        _top = top;
+        _bottom = bottom;
+
+        // Casting one of the int variables to be a double type because it is a requirement. Otherwise just returns the integer portion and no decimals.
+        double fractionTotal = _top / (double)_bottom;
+
+        // Displays Total with 2 decimal places (rounded) You can select ho wmany it'll round to by changing the number in .ToString("F#")
+        string cleanTotal = fractionTotal.ToString("F2");
+        Console.WriteLine($"Your total is {cleanTotal} (numerator = {_top} & Denominator = {_bottom})");
+
+
+        // Displays Total with ALL decimals
+        // Console.WriteLine($"Your total is {fractionTotal} (numerator = {_top} & Denominator = {_bottom})");
+    }
 
 }
