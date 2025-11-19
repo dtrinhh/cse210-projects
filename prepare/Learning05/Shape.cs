@@ -24,5 +24,6 @@ public class Shape
         return 0;
     }
 
+    // ALT method?
     // public abstract double GetArea()
 }
