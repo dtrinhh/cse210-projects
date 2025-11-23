@@ -1,0 +1,68 @@
+using System;
+using System.IO;
+using System.Runtime.InteropServices;
+
+public class User
+{
+    // private List<Goal> _goalList = new List<Goal>;
+    // Either the above or below for _goalList, still unsure. lol
+    private List<Goal> _goalList = new List<Goal>();
+
+    public void AddGoal(Goal goal)
+    {
+        _goalList.Add(goal);
+        
+    }
+
+    public void ListGoals()
+    {
+        int _listCounter = 0;
+        
+        Console.WriteLine("The goals are: ");
+
+        foreach (Goal g in _goalList)
+        {
+            _listCounter++;
+
+            Console.WriteLine($"{_listCounter}. [{g.GetCompletionStatus()}] {g.GetName()} ({g.GetDescription()})");
+        }
+    }
+
+    public void SaveGoals()
+    {
+        Console.WriteLine("What would you like to name this file?");
+        string goalFile = Console.ReadLine();
+
+        using (StreamWriter outputFile = new StreamWriter($"{goalFile}.txt"))
+        {
+
+            foreach (Goal g in _goalList)
+            {
+                outputFile.WriteLine($"{g.GetGoalType()}:~{g.GetName()}~{g.GetDescription()}~{g.GetPoints()}~{g.GetCompletionStatus()}");
+                // Console.WriteLine($"[{g.GetCompletionStatus()}] {g.GetName()} ({g.GetDescription()})");
+            }
+        }
+        
+    }
+    
+    public void LoadGoals()
+    {
+        Console.WriteLine("What is the name of the goals file you'd like to load?");
+        string goalFile = Console.ReadLine();
+
+        string[] lines = System.IO.File.ReadAllLines($"{goalFile}.txt");
+
+        foreach (string line in lines)
+        {
+            string[] parts = line.Split("~");
+
+            string goalType = parts[0];
+            string goalName = parts[1];
+            string goalDescription = parts[2];
+            int goalPoints = int.Parse(parts[3]);
+
+            Goal loadGoal = new Goal(goalType, goalName, goalDescription, goalPoints);
+            _goalList.Add(loadGoal);
+        }
+    }
+}
