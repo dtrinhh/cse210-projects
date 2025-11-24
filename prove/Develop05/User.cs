@@ -1,17 +1,18 @@
 using System;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 public class User
 {
-    // private List<Goal> _goalList = new List<Goal>;
-    // Either the above or below for _goalList, still unsure. lol
+    
+    // Protected or private for list?
     private List<Goal> _goalList = new List<Goal>();
 
+    private int _userPoints = 0;
     public void AddGoal(Goal goal)
     {
         _goalList.Add(goal);
-        
     }
 
     public void ListGoals()
@@ -23,8 +24,9 @@ public class User
         foreach (Goal g in _goalList)
         {
             _listCounter++;
-
-            Console.WriteLine($"{_listCounter}. [{g.GetCompletionStatus()}] {g.GetName()} ({g.GetDescription()})");
+            
+            Console.WriteLine($"{_listCounter}. [{g.IsComplete()}] {g.GetName()} ({g.GetDescription()})");
+            // Console.WriteLine($"{_listCounter}. [{g.GetCompletionStatus()}] {g.GetName()} ({g.GetDescription()})");
         }
     }
 
@@ -39,10 +41,8 @@ public class User
             foreach (Goal g in _goalList)
             {
                 outputFile.WriteLine($"{g.GetGoalType()}:~{g.GetName()}~{g.GetDescription()}~{g.GetPoints()}~{g.GetCompletionStatus()}");
-                // Console.WriteLine($"[{g.GetCompletionStatus()}] {g.GetName()} ({g.GetDescription()})");
             }
         }
-        
     }
     
     public void LoadGoals()
@@ -64,5 +64,35 @@ public class User
             Goal loadGoal = new Goal(goalType, goalName, goalDescription, goalPoints);
             _goalList.Add(loadGoal);
         }
+    }
+
+    public void UpdateGoal(int goalItem)
+    {
+        // foreach (Goal g in _goalList)
+        //     {
+        //         _goalList[goalItem].RecordEvent();
+        //     }
+        _goalList[goalItem-1].RecordEvent();
+        _goalList[goalItem-1].IsComplete();
+    }
+    public void UserPoints()
+    {
+        int _totalPoints = 0;
+        
+        foreach (Goal g in _goalList)
+        {
+            bool completionStatus = g.GetCompletionStatus();
+            if (completionStatus == true)
+            {
+                // _userPoints += g.GetPoints();
+                _totalPoints = g.GetPoints();
+            }
+        }
+        _userPoints += _totalPoints;
+    }
+
+    public string DisplayUserPoints()
+    {
+        return $"You have {_userPoints} points";
     }
 }

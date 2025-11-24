@@ -13,6 +13,8 @@ class Program
 
         while (programLoop == true)
         {
+            Console.WriteLine(user.DisplayUserPoints());
+
             Console.WriteLine("Menu Options:\n1. Create New Goal\n2. List Goals\n3. Save Goals\n4. Load Goals\n5. Record Event\n6. Quit\nSelect a option from menu: ");
 
             programMenu = int.Parse(Console.ReadLine());
@@ -20,6 +22,7 @@ class Program
 
             if (programMenu == 1)
             {
+
                 Console.WriteLine("What type of Goal would you like to create?\n1. Simple Goal\n2. Eternal Goal\n3. Checklist Goal");
                 string goalType = Console.ReadLine();
                 
@@ -79,9 +82,7 @@ class Program
 
             else if (programMenu == 3)
             {
-                // Console.WriteLine(" This is option 3: Save Goals!");
                 user.SaveGoals();
-
             }
 
             else if (programMenu == 4)
@@ -91,7 +92,13 @@ class Program
 
             else if (programMenu == 5)
             {
-                Console.WriteLine(" This is option 5: Record Event!");
+                user.ListGoals();
+                Console.WriteLine("What goal did you do today? ");
+                int goalCompletion = int.Parse(Console.ReadLine());
+
+                user.UpdateGoal(goalCompletion);
+
+                user.UserPoints();
             }
 
             // Consider making this a "else"?

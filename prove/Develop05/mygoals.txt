@@ -1,3 +1,3 @@
-simple goal:~test1~gfdsges~10~ 
-eternal goal:~test2~gfdsg~20~ 
-checklist goal:~test3~ghdjyte~30~ 
+simple goal:~test1~fdsaf~10~False
+eternal goal:~test2~grfdsgs~20~False
+checklist goal:~test3~gfdgsgfds~30~False

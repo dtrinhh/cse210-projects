@@ -2,14 +2,17 @@ using System;
 
 public class EternalGoal : Goal
 {
+    private string _goalCompleted;
     public override void RecordEvent()
     {
 
     }
 
-    public override void IsComplete()
+    public override string IsComplete()
     {
-
+        string infinitySymbol = "\u221E";
+        _goalCompleted = $"{infinitySymbol}";
+        return _goalCompleted;
     }
 
     public EternalGoal(string type, string name, string description, int points) : base(type, name, description, points)

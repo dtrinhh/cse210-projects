@@ -14,6 +14,9 @@ public class Goal
     // Adjust this from string to bool or int depending on how you want to display the symbol for completion, eternal(infinity symbol), or 1/2 (checklist)
     private string _goalCompleted;
 
+    private bool _markedComplete;
+    
+
     public Goal(string goalType, string goalName, string goalDescription, int goalPoints)
     {
         _goalType = goalType;
@@ -54,33 +57,33 @@ public class Goal
     }
 
     // is this proper? or should I use IsComplete() method somehow?
-    public string GetCompletionStatus()
+    public bool GetCompletionStatus()
     {
-        return _goalCompleted;
+        return _markedComplete;
     }
 
-    public void DisplayPointTotals()
-    {
+    // public void DisplayPointTotals()
+    // {
 
-    }
+    // }
 
-    public void DisplayGoalList()
-    {
-        Console.WriteLine($"This is the Goal!");
-        Console.WriteLine($"GOAL TYPE: {_goalType}");
-        Console.WriteLine($"GOAL NAME: {_goalName}");
-        Console.WriteLine($"GOAL DESCRIPTION: {_goalDescription}");
-        Console.WriteLine($"GOAL POINTS: {_goalPoints}");
-    }
+    // public void DisplayGoalList()
+    // {
+    //     Console.WriteLine($"This is the Goal!");
+    //     Console.WriteLine($"GOAL TYPE: {_goalType}");
+    //     Console.WriteLine($"GOAL NAME: {_goalName}");
+    //     Console.WriteLine($"GOAL DESCRIPTION: {_goalDescription}");
+    //     Console.WriteLine($"GOAL POINTS: {_goalPoints}");
+    // }
 
     public virtual void RecordEvent()
     {
-
+        _markedComplete = true;
     }
     
-    public virtual void IsComplete()
+    public virtual string IsComplete()
     {
         _goalCompleted = " ";
-        // Console.WriteLine(_goalCompleted);
+        return _goalCompleted;
     }
 }

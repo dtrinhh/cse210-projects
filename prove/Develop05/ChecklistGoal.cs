@@ -8,14 +8,19 @@ public class ChecklistGoal : Goal
 
     private int _progressPoints;
 
+    private int _goalProgress;
+
+    private string _goalCompleted;
+
     public override void RecordEvent()
     {
-
+        _goalProgress += 1;
     }
 
-    public override void IsComplete()
+    public override string IsComplete()
     {
-
+        _goalCompleted = $"{_goalProgress}/{_goalRepetitions}";
+        return _goalCompleted;
     }
     
     public ChecklistGoal(string type, string name, string description, int points) : base(type, name, description, points)

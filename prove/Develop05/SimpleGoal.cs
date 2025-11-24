@@ -2,14 +2,19 @@ using System;
 
 public class SimpleGoal : Goal
 {
+    private string _goalCompleted;
+
+    private bool _markedComplete;
     public override void RecordEvent()
     {
 
     }
 
-    public override void IsComplete()
+    public override string IsComplete()
     {
-
+        _goalCompleted = $"x";
+        return _goalCompleted;
+        
     }
 
     public SimpleGoal(string type, string name, string description, int points) : base(type, name, description, points)
