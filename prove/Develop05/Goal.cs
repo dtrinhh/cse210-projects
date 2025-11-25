@@ -14,7 +14,7 @@ public class Goal
     // Adjust this from string to bool or int depending on how you want to display the symbol for completion, eternal(infinity symbol), or 1/2 (checklist)
     private string _goalCompleted;
 
-    private bool _markedComplete;
+    protected bool _markedComplete;
     
 
     public Goal(string goalType, string goalName, string goalDescription, int goalPoints)

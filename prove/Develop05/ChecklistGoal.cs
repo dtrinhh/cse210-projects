@@ -15,11 +15,23 @@ public class ChecklistGoal : Goal
     public override void RecordEvent()
     {
         _goalProgress += 1;
+        // _goalCompleted = $"{_goalProgress}/{_goalRepetitions}";
+        Console.WriteLine(_goalCompleted);
+        if (_goalProgress == _goalRepetitions)
+        {
+            base._markedComplete = true;
+        }
     }
 
     public override string IsComplete()
     {
         _goalCompleted = $"{_goalProgress}/{_goalRepetitions}";
+        
+        if (base._markedComplete == true)
+        {
+            _goalCompleted = $"{_goalProgress}/{_goalRepetitions}";
+        }
+
         return _goalCompleted;
     }
     

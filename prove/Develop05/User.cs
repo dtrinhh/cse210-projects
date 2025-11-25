@@ -27,6 +27,9 @@ public class User
             
             Console.WriteLine($"{_listCounter}. [{g.IsComplete()}] {g.GetName()} ({g.GetDescription()})");
             // Console.WriteLine($"{_listCounter}. [{g.GetCompletionStatus()}] {g.GetName()} ({g.GetDescription()})");
+
+            // STOPPED HERE. TRYING TO FIGURE OUT HOW TO DISPLAY THE MARKS ASSOCIATED WITH THE OVERRIDE METHODS. DID IT ON ACCIDENT BUT CHANGED CODE AND NOW IT DOESN'T WORK.
+            // IT ONLY USES THE IsComplete() method in the Goal.cs, not any of the other ones though. WHY!?
         }
     }
 
@@ -63,6 +66,29 @@ public class User
 
             Goal loadGoal = new Goal(goalType, goalName, goalDescription, goalPoints);
             _goalList.Add(loadGoal);
+
+            // Goal loadGoal;
+            
+            // if (goalType == "simple goal")
+            // {
+            //     loadGoal = new SimpleGoal(goalType, goalName, goalDescription, goalPoints);
+            //     _goalList.Add(loadGoal);
+            // }
+            // else if (goalType == "eternal goal")
+            // {
+            //     loadGoal = new EternalGoal(goalType, goalName, goalDescription, goalPoints);
+            //     _goalList.Add(loadGoal);
+            // }
+            // else if (goalType == "checklist goal")
+            // {
+            //     loadGoal = new ChecklistGoal(goalType, goalName, goalDescription, goalPoints);
+            //     _goalList.Add(loadGoal);
+            // }
+            // else
+            // {
+            //     loadGoal = new Goal(goalType, goalName, goalDescription, goalPoints);
+            //     _goalList.Add(loadGoal);
+            // }
         }
     }
 
@@ -73,7 +99,7 @@ public class User
         //         _goalList[goalItem].RecordEvent();
         //     }
         _goalList[goalItem-1].RecordEvent();
-        _goalList[goalItem-1].IsComplete();
+        // _goalList[goalItem-1].IsComplete();
     }
     public void UserPoints()
     {
